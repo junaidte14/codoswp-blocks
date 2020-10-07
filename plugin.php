@@ -3,7 +3,7 @@
  * Plugin Name: CODOSWP Blocks
  * Plugin URI: #
  * Description: CODOSWP Blocks — is a Gutenberg plugin for codoswp theme.
- * Author: iENGINEERING
+ * Author: Junaid Hassan
  * Author URI: #
  * Version: 1.0.0
  * License: GPL2+
