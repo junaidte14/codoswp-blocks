@@ -1,0 +1,17 @@
+{
+  "name": "codoswp-blocks-cgb-guten-block",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "cgb-scripts start",
+    "build": "cgb-scripts build",
+    "eject": "cgb-scripts eject",
+    "bundle": "dir-archiver --src . --dest ../codoswp-blocks.zip --exclude .DS_Store .stylelintrc.json .eslintrc.json .eslintignore .editorconfig .git .gitattributes .github .gitignore readme.md node_modules package-lock.json package.json src"
+  },
+  "dependencies": {
+    "cgb-scripts": "1.23.1",
+    "classnames": "^2.2.6",
+    "re-resizable": "^6.6.1",
+    "dir-archiver": "^1.1.1"
+  }
+}
