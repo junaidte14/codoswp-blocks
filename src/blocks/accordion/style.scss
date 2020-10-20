@@ -1,0 +1,32 @@
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+
+ .wp-block-codoswpgb-accordion  {
+  /* Style the buttons that are used to open and close the accordion panel */
+  /*https://www.w3schools.com/howto/howto_js_accordion.asp*/
+  .codoswpcgb-accordion {
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 2px;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }
+
+  /* Style the accordion panel. Note: hidden by default */
+  .codoswpcgb-accordion-panel {
+    padding: 0 18px;
+    overflow: hidden;
+  }
+
+  .codoswpcgb-plus-icon, .codoswpcgb-minus-icon{
+    display: none;
+    float: right;
+  }
+}

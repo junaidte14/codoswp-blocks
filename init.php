@@ -54,6 +54,16 @@ function codoswp_blocks_cgb_block_assets() { // phpcs:ignore
 		null // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: File modification time.
 	);
 
+	// Register custom script for frontend.
+	wp_register_script(
+		'codoswp_blocks-cgb-blocks-custom-js', // Handle.
+		plugin_dir_url( __FILE__ ).'dist/blocks-custom.js', // Block.build.js: We register the block here. Built with Webpack.
+		array( 'jquery' ), // Dependencies, defined above.
+		null, // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ), // Version: filemtime — Gets file modification time.
+		true // Enqueue the script in the footer.
+	);
+	wp_enqueue_script('codoswp_blocks-cgb-blocks-custom-js');
+
 	// WP Localized globals. Use dynamic PHP stuff in JavaScript via `codoswpcgb_data` object.
 	wp_localize_script(
 		'codoswp_blocks-cgb-block-js',

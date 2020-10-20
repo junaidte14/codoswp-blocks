@@ -10,3 +10,4 @@
  */
 
 import './blocks/icon-card/block.js';
+import './blocks/accordion/block.js';
