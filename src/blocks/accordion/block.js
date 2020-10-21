@@ -152,7 +152,7 @@ registerBlockType( 'codoswpgb/accordion', {
 				<div className={ className }>
 					<button className="codoswpcgb-accordion" style={{backgroundColor: attributes.tabBGColor, color: attributes.tabTextColor}}>
 						{attributes.tabTitle}
-						<Dashicon icon="plus-alt2" className="codoswpcgb-plus-icon" style={{fill: attributes.iconColor}} />
+						<Dashicon icon="plus" className="codoswpcgb-plus-icon" style={{fill: attributes.iconColor}} />
 						<Dashicon icon="minus" className="codoswpcgb-minus-icon" style={{fill: attributes.iconColor}} />
 					</button>
 					<div className="codoswpcgb-accordion-panel">
@@ -180,7 +180,7 @@ registerBlockType( 'codoswpgb/accordion', {
 			<div className={ className }>
 				<button className="codoswpcgb-accordion" style={{backgroundColor: attributes.tabBGColor, color: attributes.tabTextColor}}>
 					{attributes.tabTitle}
-					<Dashicon icon="plus-alt2" className="codoswpcgb-plus-icon" style={{fill: attributes.iconColor}} />
+					<Dashicon icon="plus" className="codoswpcgb-plus-icon" style={{fill: attributes.iconColor}} />
 					<Dashicon icon="minus" className="codoswpcgb-minus-icon" style={{fill: attributes.iconColor}} />
 				</button>
 				<div className="codoswpcgb-accordion-panel">
