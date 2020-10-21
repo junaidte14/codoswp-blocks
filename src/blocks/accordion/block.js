@@ -45,7 +45,7 @@ registerBlockType( 'codoswpgb/accordion', {
 		},
 		tabBGColor: {
 			type: 'string',
-			default: '#3682FF'
+			default: '#87b2f6'
 		},
 		tabTextColor: {
 			type: 'string',
@@ -78,7 +78,7 @@ registerBlockType( 'codoswpgb/accordion', {
 			{
 				name: 'Color 1',
 				slug: 'codoswpcgb_color_1',
-				color: '#3682FF'
+				color: '#87b2f6'
 			},
 			{
 				name: 'Color 2',
@@ -229,8 +229,8 @@ registerBlockType( 'codoswpgb/accordion', {
 				<div className={ className }>
 					<button className="codoswpcgb-accordion" style={{backgroundColor: attributes.tabBGColor, color: attributes.tabTextColor}}>
 						{attributes.tabTitle}
-						<img src={attributes.plusIconImageURL} className="codoswpcgb-plus-icon" width="16" height="16" alt="plus-icon" />
-						<img src={attributes.minusIconImageURL} className="codoswpcgb-minus-icon" width="16" height="16" alt="minus-icon" />
+						<img src={attributes.plusIconImageURL} className="codoswpcgb-plus-icon" width="16" alt="plus-icon" />
+						<img src={attributes.minusIconImageURL} className="codoswpcgb-minus-icon" width="16" alt="minus-icon" />
 					</button>
 					<div className="codoswpcgb-accordion-panel">
 						<InnerBlocks />
@@ -257,8 +257,8 @@ registerBlockType( 'codoswpgb/accordion', {
 			<div className={ className }>
 				<button className="codoswpcgb-accordion" style={{backgroundColor: attributes.tabBGColor, color: attributes.tabTextColor}}>
 					{attributes.tabTitle}
-					<img src={attributes.plusIconImageURL} className="codoswpcgb-plus-icon" width="16" height="16" alt="plus-icon" />
-					<img src={attributes.minusIconImageURL} className="codoswpcgb-minus-icon" width="16" height="16" alt="minus-icon" />
+					<img src={attributes.plusIconImageURL} className="codoswpcgb-plus-icon" width="16" alt="plus-icon" />
+					<img src={attributes.minusIconImageURL} className="codoswpcgb-minus-icon" width="16" alt="minus-icon" />
 				</button>
 				<div className="codoswpcgb-accordion-panel">
 					<InnerBlocks.Content />
