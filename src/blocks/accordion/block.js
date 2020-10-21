@@ -14,6 +14,7 @@ const { InspectorControls, InnerBlocks, PanelColorSettings, MediaUpload } = wp.b
 const { TextControl, PanelBody, PanelRow, Button } = wp.components;
 const { registerBlockType } = wp.blocks;
 const { __ } = wp.i18n; // Import __() from wp.i18n
+import { Dashicon } from '@wordpress/components';
 
 /**
  * Register: a Gutenberg Block.
@@ -51,14 +52,10 @@ registerBlockType( 'codoswpgb/accordion', {
 			type: 'string',
 			default: '#FFFFFF'
 		},
-		plusIconImageURL: {
+		iconColor: {
 			type: 'string',
-			default: codoswpcgb_data.pluginDirUrl + 'images/plus-icon.png'
-		},
-		minusIconImageURL: {
-			type: 'string',
-			default: codoswpcgb_data.pluginDirUrl + 'images/minus-icon.png'
-		},
+			default: '#3682FF'
+		}
 	},
 
 	/**
@@ -78,12 +75,12 @@ registerBlockType( 'codoswpgb/accordion', {
 			{
 				name: 'Color 1',
 				slug: 'codoswpcgb_color_1',
-				color: '#87b2f6'
+				color: '#3682FF'
 			},
 			{
 				name: 'Color 2',
 				slug: 'codoswpcgb_color_2',
-				color: '#00C693'
+				color: '#87b2f6'
 			},
 			{
 				name: 'Color 3',
@@ -124,7 +121,7 @@ registerBlockType( 'codoswpgb/accordion', {
 							colorSettings={
 								[
 									{
-										colors: colorSamples, // array with custom colors							 
+										colors: colorSamples,							 
 										value: attributes.tabTextColor,							 
 										label: 'Tab Color',							 
 										onChange: ( value ) => {								 
@@ -132,105 +129,31 @@ registerBlockType( 'codoswpgb/accordion', {
 										},
 									},
 									{
-										colors: colorSamples, // array with custom colors							 
+										colors: colorSamples,							 
 										value: attributes.tabBGColor,							 
 										label: 'Tab BG Color',							 
 										onChange: ( value ) => {								 
 											setAttributes( { tabBGColor: value } );						 
 										},
 									},
+									{
+										colors: colorSamples,							 
+										value: attributes.iconColor,							 
+										label: 'Icons Color',							 
+										onChange: ( value ) => {								 
+											setAttributes( { iconColor: value } );						 
+										},
+									},
 								]
 							}
 						/>
-						<PanelRow>
-							<TextControl
-								label={ __( 'Plus Icon' ) }
-								help={ __( 'Upload plus icon image' ) }
-								value={ attributes.plusIconImageURL }
-								onChange={ ( nextValue ) => {
-									setAttributes( {
-										plusIconImageURL: nextValue,
-									} );
-								} }
-							/>
-							<MediaUpload 
-								onSelect={ ( value ) => {										 							 
-										setAttributes( { plusIconImageURL: value.url } );									 
-									}
-								} 							 
-								type="image"						 
-								value={attributes.plusIconImageURL}							 
-								render={ function( obj ) {							  	 
-										return (
-											<Button						 
-												className={attributes.plusIconImageURL ? 'image-button' : 'button button-large'}										 
-												onClick={obj.open}>
-												{ ! attributes.plusIconImageURL ? (
-														__( 'Upload Image', 'codoswpcgb' )
-													) : (
-														<img
-															src={ attributes.plusIconImageURL }
-															alt={ __(
-																'Upload Icon Image',
-																'codoswpcgb'
-															) }
-														/>
-													)
-												}
-											</Button>				  		 
-										); 
-									}
-								}
-							/>
-						</PanelRow>
-						<PanelRow>
-							<TextControl
-								label={ __( 'Minus Icon' ) }
-								help={ __( 'Upload minus icon image' ) }
-								value={ attributes.minusIconImageURL }
-								onChange={ ( nextValue ) => {
-									setAttributes( {
-										minusIconImageURL: nextValue,
-									} );
-								} }
-							/>
-							<MediaUpload 
-								onSelect={ ( value ) => {										 							 
-										setAttributes( { minusIconImageURL: value.url } );									 
-									}
-								} 							 
-								type="image"						 
-								value={attributes.minusIconImageURL}							 
-								render={ function( obj ) {							  	 
-										return (
-											<Button						 
-												className={attributes.minusIconImageURL ? 'image-button' : 'button button-large'}										 
-												onClick={obj.open}>
-												{ ! attributes.minusIconImageURL ? (
-														__( 'Upload Image', 'codoswpcgb' )
-													) : (
-														<img
-															src={ attributes.minusIconImageURL }
-															alt={ __(
-																'Upload Icon Image',
-																'codoswpcgb'
-															) }
-														/>
-													)
-												}
-											</Button>				  		 
-										); 
-									}
-								}
-							/>
-						</PanelRow>
 					</PanelBody>
 				</InspectorControls>
 				<div className={ className }>
 					<button className="codoswpcgb-accordion" style={{backgroundColor: attributes.tabBGColor, color: attributes.tabTextColor}}>
 						{attributes.tabTitle}
-						<img src={attributes.plusIconImageURL} className="codoswpcgb-plus-icon" width="16" alt="plus-icon" />
-						<img src={attributes.minusIconImageURL} className="codoswpcgb-minus-icon" width="16" alt="minus-icon" />
+						<Dashicon icon="plus" className="codoswpcgb-plus-icon" style={{fill: attributes.iconColor}} />
+						<Dashicon icon="minus" className="codoswpcgb-minus-icon" style={{fill: attributes.iconColor}} />
 					</button>
 					<div className="codoswpcgb-accordion-panel">
 						<InnerBlocks />
@@ -257,8 +180,8 @@ registerBlockType( 'codoswpgb/accordion', {
 			<div className={ className }>
 				<button className="codoswpcgb-accordion" style={{backgroundColor: attributes.tabBGColor, color: attributes.tabTextColor}}>
 					{attributes.tabTitle}
-					<img src={attributes.plusIconImageURL} className="codoswpcgb-plus-icon" width="16" alt="plus-icon" />
-					<img src={attributes.minusIconImageURL} className="codoswpcgb-minus-icon" width="16" alt="minus-icon" />
+					<Dashicon icon="plus" className="codoswpcgb-plus-icon" style={{fill: attributes.iconColor}} />
+					<Dashicon icon="minus" className="codoswpcgb-minus-icon" style={{fill: attributes.iconColor}} />
 				</button>
 				<div className="codoswpcgb-accordion-panel">
 					<InnerBlocks.Content />
