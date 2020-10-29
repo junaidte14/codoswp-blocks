@@ -10,11 +10,11 @@
 import './editor.scss';
 import './style.scss';
 
-const { InspectorControls, InnerBlocks, PanelColorSettings, MediaUpload } = wp.blockEditor;
-const { TextControl, PanelBody, PanelRow, Button } = wp.components;
+const { InspectorControls, InnerBlocks, PanelColorSettings } = wp.blockEditor;
+const { TextControl, PanelBody, PanelRow } = wp.components;
 const { registerBlockType } = wp.blocks;
 const { __ } = wp.i18n; // Import __() from wp.i18n
-import { Dashicon } from '@wordpress/components';
+//import { Dashicon } from '@wordpress/components';
 
 /**
  * Register: a Gutenberg Block.
@@ -152,8 +152,8 @@ registerBlockType( 'codoswpgb/accordion', {
 				<div className={ className }>
 					<button className="codoswpcgb-accordion" style={{backgroundColor: attributes.tabBGColor, color: attributes.tabTextColor}}>
 						{attributes.tabTitle}
-						<Dashicon icon="plus" className="codoswpcgb-plus-icon" style={{fill: attributes.iconColor}} />
-						<Dashicon icon="minus" className="codoswpcgb-minus-icon" style={{fill: attributes.iconColor}} />
+						<span className="codoswpcgb-plus-icon" style={{color: attributes.iconColor}}>&#9538;</span>
+						<span className="codoswpcgb-minus-icon" style={{color: attributes.iconColor}}>&#9472;</span>
 					</button>
 					<div className="codoswpcgb-accordion-panel">
 						<InnerBlocks />
@@ -180,8 +180,8 @@ registerBlockType( 'codoswpgb/accordion', {
 			<div className={ className }>
 				<button className="codoswpcgb-accordion" style={{backgroundColor: attributes.tabBGColor, color: attributes.tabTextColor}}>
 					{attributes.tabTitle}
-					<Dashicon icon="plus" className="codoswpcgb-plus-icon" style={{fill: attributes.iconColor}} />
-					<Dashicon icon="minus" className="codoswpcgb-minus-icon" style={{fill: attributes.iconColor}} />
+					<span className="codoswpcgb-plus-icon" style={{color: attributes.iconColor}}>&#9538;</span>
+					<span className="codoswpcgb-minus-icon" style={{color: attributes.iconColor}}>&#9472;</span>
 				</button>
 				<div className="codoswpcgb-accordion-panel">
 					<InnerBlocks.Content />
