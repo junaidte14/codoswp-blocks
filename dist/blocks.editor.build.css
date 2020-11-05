@@ -1,0 +1,76 @@
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+.wp-block-codoswpgb-icon-card .card {
+  max-width: 100%;
+  min-height: 255px;
+  padding: 60px 15px 0px 15px;
+  border: 1px solid #737373;
+  border-radius: 0; }
+
+.wp-block-codoswpgb-icon-card .icon-card {
+  position: absolute;
+  left: calc(50% - 40px);
+  top: -40px;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  border: 1px solid #737373;
+  text-align: center;
+  background-color: #fff; }
+  .wp-block-codoswpgb-icon-card .icon-card img {
+    width: 40px;
+    margin-top: 8px; }
+
+@media (max-width: 767px) {
+  .wp-block-codoswpgb-icon-card .icon-card {
+    left: 40%; } }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+.wp-block-codoswpgb-accordion {
+  /* Style the buttons that are used to open and close the accordion panel */
+  /*https://www.w3schools.com/howto/howto_js_accordion.asp*/ }
+  .wp-block-codoswpgb-accordion .codoswpcgb-accordion {
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 2px;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s; }
+  .wp-block-codoswpgb-accordion .codoswpcgb-accordion-panel {
+    padding: 0 18px;
+    overflow: hidden; }
+  .wp-block-codoswpgb-accordion .codoswpcgb-plus-icon, .wp-block-codoswpgb-accordion .codoswpcgb-minus-icon {
+    float: right; }
+  .wp-block-codoswpgb-accordion .codoswpcgb-plus-icon {
+    display: inline-block; }
+  .wp-block-codoswpgb-accordion .codoswpcgb-minus-icon {
+    display: none; }
+  .wp-block-codoswpgb-accordion .active .codoswpcgb-minus-icon {
+    display: inline-block; }
+  .wp-block-codoswpgb-accordion .active .codoswpcgb-plus-icon {
+    display: none; }
